@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="author" content="HAYDEX">
+        <meta name="description" content="Calculate company's score.">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+        <title>P-Win Calculator</title>
+        
+        <!-- Favicons -->
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png"> <!-- https://mobiforge.com/design-development/adding-favicons-in-a-multi-browser-multi-platform-world -->
+
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="assets/presentation/index.css"/>
+        
+        <script src="assets/behavior/index.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <div id="p-win-logo"></div>
+            <div id="login">
+                <div id="details">
+                    <p id="username">User's Name</p>
+                    <p id="email">email</p>
+                </div>
+                <div id="username-logo"></div>
+            </div>
+        </header>
+
+        <section id="message">
+            <p><span>Welcome,</span>please make a selection:</p>
+        </section>
+
+        <section id="selection">
+            <div id="checkmark-wrapper">
+                <div id="checkmark1" class="checkmark"></div>
+                <div id="pipe1" class="pipe"></div>
+                <div id="checkmark2" class="checkmark"></div>
+                <div id="pipe1" class="pipe"></div>
+                <div id="checkmark3" class="checkmark"></div>
+                <div id="pipe1" class="pipe"></div>
+                <div id="checkmark4" class="checkmark"></div>
+            </div>
+            <div id="selection-wrapper">
+                <form action="">
+                    <div class="select-wrap">
+                        <label for="agency" class="selection-label">Agency:</label>
+                        <select name="agency" id="agency">
+                            <option disabled selected value> -- Select an Agency -- </option>
+                        </select>
+                    </div>
+
+                    <div class="select-wrap">
+                        <label for="team" class="selection-label">Team:</label>
+                        <select name="team" id="team">
+                            <option disabled selected value> -- Select a Team -- </option>
+                        </select>
+                    </div>
+
+                    <div class="select-wrap">
+                        <label for="bid" class="selection-label">Bid:</label>
+                        <input id="bid" type="text" placeholder="Enter Bid Value">
+                    </div>
+
+                    <div class="select-wrap">
+                        <label for="model" class="selection-label">Model:</label>
+                        <select name="model" id="model">
+                            <option disabled selected value> -- Select a Model -- </option>
+                            <option value="model1">Model 1</option>
+                            <option value="model2">Model 2</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="score">
+            <p id="p-win-label">P-Win:</p>
+            <p id="score-value">0.0</p>
+        </section>
+
+        <section id="action">
+            <button id="reset-selection-button">Reset Selection</button>
+            <button id="quit-button">Quit</button>
+        </section>
+        
+        <footer>
+            <p>Copyright 2023. All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>
