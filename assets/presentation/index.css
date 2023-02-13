@@ -1,0 +1,235 @@
+/** Global settings **/
+
+:root {
+    
+    /* theme */
+
+    --white: white;
+    --greyish: #707071;
+    
+    /* fonts */
+
+    --size12: 12px;
+
+    /* radius */
+
+    --radius5: 5px;
+    --radius10: 10px;
+
+    /* interface */
+
+    --interface: url(/assets/images/interface.svg);
+    
+}
+
+html {
+
+    color: var(--greyish);
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box; /* https://www.w3schools.com/css/css3_box-sizing.asp   https://www.youtube.com/watch?v=ADDvQlerEx4&list=PLu8EoSxDXHP5CIFvt9-ze3IngcdAc2xKG&index=2 */
+
+}
+
+body {
+
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas:
+        "header"
+        "message"
+        "selection"
+        "score"
+        "action"
+        "footer";
+    grid-auto-rows: min-content;
+    
+    margin: 30px;
+    box-sizing: inherit;
+    text-align: center;
+    height: 100vh;
+
+}
+
+body.noScroll {
+
+    overflow: hidden;
+    
+}
+
+a {
+
+    text-decoration: none;
+    color: inherit;
+
+}
+
+a:hover {
+
+    color: inherit;
+
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    background-color: var(--greyish);
+    color: var(--white);
+    border-radius: var(--radius10);
+    padding: 8px;
+    margin: 3px;
+    cursor: pointer;
+}
+
+input {
+    color: var(--greyish);
+    border-radius: var(--radius10);
+    border: 1px solid var(--greyish);
+}
+
+select {
+    color: var(--greyish);
+    border-radius: var(--radius10);
+    border: 1px solid var(--greyish);
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: 'Roboto';
+
+}
+
+header {
+    height: 47px;
+    display: flex;
+    grid-area: header;
+    justify-content:space-between;
+}
+
+header div#p-win-logo {
+    width: 153px;
+    height: 47px;
+    background-image: var(--interface);
+    background-position: -240px -50px;
+}
+
+header div#login {
+    display: inline-flex;
+    flex-wrap: nowrap;
+}
+
+header div#login div#details {
+    text-align: right;
+    margin-right: 10px;
+    align-self: center;
+}
+
+header div#login div#details p#username {
+    font-weight: 600;
+}
+
+header div#login div#username-logo {
+    width: 47px;
+    height: 47px;
+    background-image: var(--interface);
+    background-position: -110px -250px;
+}
+
+section#message {
+    grid-area: message;
+}
+
+section#message p span {
+    display: block;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+section#selection {
+    grid-area: selection;
+}
+
+section#selection div#checkmark-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+section#selection div#checkmark-wrapper div.checkmark {
+    width: 40px;
+    height: 40px;
+    background-image: var(--interface);
+    background-position: -50px -250px;
+}
+
+section#selection div#checkmark-wrapper div.pipe {
+    width: 170px;
+    height: 4px;
+    background-color: var(--greyish);
+}
+
+section#selection div#selection-wrapper form {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+section#selection div#selection-wrapper label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+section#selection div#selection-wrapper select {
+    width: 200px;
+    padding: 5px;
+}
+
+section#selection div#selection-wrapper input {
+    width: 200px;
+    padding: 6px;
+    
+    border-radius: var(--radius10);
+}
+
+section#score {
+    grid-area: score;
+}
+
+section#score p#p-win-label {
+    font-weight: 600;
+}
+
+section#score p#score-value {
+    font-weight: 600;
+    font-size: 56px;
+}
+
+section#action button {
+    font-weight: 500;
+    width: 150px;
+}
+
+section#action button:hover {
+    opacity: 0.7;
+}
+
+footer {
+    grid-area: footer;
+}
+
+
+
