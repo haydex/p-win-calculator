@@ -6,6 +6,7 @@
 
     --white: white;
     --greyish: #707071;
+    --greyish-dark: rgb(30, 30, 30);
     
     /* fonts */
 
@@ -201,8 +202,15 @@ section#selection div#selection-wrapper select {
 section#selection div#selection-wrapper input {
     width: 200px;
     padding: 6px;
-    
     border-radius: var(--radius10);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
 }
 
 section#score {
@@ -229,6 +237,34 @@ section#action button:hover {
 
 footer {
     grid-area: footer;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        background-color: var(--greyish-dark);
+        color: var(--white);
+    }
+
+    section#selection div#selection-wrapper input {
+
+        background-color: transparent;
+        color: var(--white);
+    }
+
+    section#selection div#selection-wrapper select {
+        background-color: transparent;
+        color: var(--white);
+    }
+
+    input:-webkit-autofill {
+        -webkit-text-fill-color: var(--white) !important;
+        -webkit-box-shadow: 0 0 0 30px var(--greyish-dark) inset !important;
+    }
+
+    ::placeholder {
+        color: var(--white);
+        opacity: 1;
+    }
 }
 
 
