@@ -195,11 +195,13 @@ section#selection div#selection-wrapper label {
 }
 
 section#selection div#selection-wrapper select {
+    text-align: center;
     width: 200px;
     padding: 5px;
 }
 
 section#selection div#selection-wrapper input {
+    text-align: center;
     width: 200px;
     padding: 6px;
     border-radius: var(--radius10);
