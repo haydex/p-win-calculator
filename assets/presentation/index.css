@@ -19,7 +19,7 @@
 
     /* interface */
 
-    --interface: url(/p-win-calculator/assets/images/interface.svg);
+    --interface: url(/assets/images/interface.svg);
     
 }
 
@@ -48,7 +48,7 @@ body {
         "footer";
     grid-auto-rows: min-content;
     
-    margin: 30px;
+    padding: 50px;
     box-sizing: inherit;
     text-align: center;
     height: 100vh;
@@ -120,8 +120,8 @@ header {
 }
 
 header div#p-win-logo {
-    width: 153px;
-    height: 47px;
+    width: 181px;
+    height: 36px;
     background-image: var(--interface);
     background-position: -240px -50px;
 }
@@ -245,6 +245,17 @@ footer {
     html {
         background-color: var(--greyish-dark);
         color: var(--white);
+    }
+
+    header div#p-win-logo {
+        background-position: -240px -120px;
+    }
+
+    header div#login div#username-logo {
+        width: 47px;
+        height: 47px;
+        background-image: var(--interface);
+        background-position: -110px -300px;
     }
 
     section#selection div#selection-wrapper input {
