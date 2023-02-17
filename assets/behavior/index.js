@@ -743,7 +743,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 i = bidsList.length - 1;
             }
             
-            console.log(`Price: ${bidsList[i].price * 1000} Value: ${bidsList[i].value}`);
+            console.log(`Price: ${(typeof bidsList[i].price == "string" ? +bidsList[i].price.replace(/\,/g, '') : bidsList[i].price) * 1000} Value: ${bidsList[i].value}`);
             pScoreElement.innerHTML = model(selectAgencyElement.value, selectTeamElement.value, bidsList[i].value).toFixed(2);
         } else {
             pScoreElement.innerHTML = "0.0";
