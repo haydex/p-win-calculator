@@ -727,12 +727,14 @@ document.addEventListener("DOMContentLoaded", function() {
             let model = eval(selectModelElement.value);
             let bid = +inputBidElement.value.replace(/\,/g, '');
             let i = 0;
-            // round to the highest thousand
-            bid = Math.round(bid/1000)*1000;
-            console.log(`Rounded Bid: ${bid}`);
+            // Convert millions to thousands
+            bid /= 1000;
+            // Round to the highest thousand
+            bid = Math.round(bid);
+            console.log(`Rounded: ${bid * 1000}`);
             let highestBid = typeof bidsList[bidsList.length - 1].price == "string" ? +bidsList[bidsList.length - 1].price.replace(/\,/g, '') : bidsList[bidsList.length - 1].price;
             if (bid < highestBid) {
-                // find nearest higher bid than the entered bid
+                // Find nearest higher bid than the entered bid
                 for(i=0; i < bidsList.length; i++) {
                     let price = typeof bidsList[i].price == "string" ? +bidsList[i].price.replace(/\,/g, '') : bidsList[i].price;
                     if (price >= bid) break;
@@ -741,7 +743,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 i = bidsList.length - 1;
             }
             
-            console.log(`Index: ${i} Bid Price: ${bidsList[i].price} Bid Value: ${bidsList[i].value}`);
+            console.log(`Price: ${bidsList[i].price * 1000} Value: ${bidsList[i].value}`);
             pScoreElement.innerHTML = model(selectAgencyElement.value, selectTeamElement.value, bidsList[i].value).toFixed(2);
         } else {
             pScoreElement.innerHTML = "0.0";
