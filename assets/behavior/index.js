@@ -731,7 +731,7 @@ document.addEventListener("DOMContentLoaded", function() {
             bid /= 1000;
             // Round to the highest thousand
             bid = Math.round(bid);
-            console.log(`Rounded: ${bid * 1000}`);
+            // console.log(`Rounded: ${bid * 1000}`);
             let highestBid = typeof bidsList[bidsList.length - 1].price == "string" ? +bidsList[bidsList.length - 1].price.replace(/\,/g, '') : bidsList[bidsList.length - 1].price;
             if (bid < highestBid) {
                 // Find nearest higher bid than the entered bid
@@ -743,7 +743,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 i = bidsList.length - 1;
             }
             
-            console.log(`Price: ${(typeof bidsList[i].price == "string" ? +bidsList[i].price.replace(/\,/g, '') : bidsList[i].price) * 1000} Value: ${bidsList[i].value}`);
+            console.log(`Selected Bid:\nPrice: ${(typeof bidsList[i].price == "string" ? +bidsList[i].price.replace(/\,/g, '') : bidsList[i].price) * 1000} Value: ${bidsList[i].value}`);
             pScoreElement.innerHTML = model(selectAgencyElement.value, selectTeamElement.value, bidsList[i].value).toFixed(2);
         } else {
             pScoreElement.innerHTML = "0.0";
