@@ -90,6 +90,7 @@ input {
     color: var(--greyish);
     border-radius: var(--radius10);
     border: 1px solid var(--greyish);
+    font-weight: 500;
 }
 
 select {
@@ -97,6 +98,7 @@ select {
     border-radius: var(--radius10);
     border: 1px solid var(--greyish);
     cursor: pointer;
+    font-weight: 500;
 }
 
 ::-webkit-scrollbar {
