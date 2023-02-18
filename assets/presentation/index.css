@@ -7,6 +7,7 @@
     --white: white;
     --greyish: #707071;
     --greyish-dark: rgb(30, 30, 30);
+    --bluewish: #009DFF;
     
     /* fonts */
 
@@ -170,27 +171,36 @@ section#selection div#checkmark-wrapper {
 }
 
 section#selection div#checkmark-wrapper div.checkmark {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     background-image: var(--interface);
     background-position: -50px -250px;
 }
 
+section#selection div#checkmark-wrapper div.checkmark.selected {
+    background-position-y: -300px;
+}
+
 section#selection div#checkmark-wrapper div.pipe {
-    width: 170px;
+    width: 180px;
     height: 4px;
     background-color: var(--greyish);
+}
+
+section#selection div#checkmark-wrapper div.pipe.selected {
+    background-color: var(--bluewish);
 }
 
 section#selection div#selection-wrapper form {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
+    margin-top: 25px;
 }
 
 section#selection div#selection-wrapper label {
-    display: block;
+    display: none;
     margin-bottom: 5px;
 }
 
@@ -198,6 +208,16 @@ section#selection div#selection-wrapper select {
     text-align: center;
     width: 200px;
     padding: 5px;
+    border: 4px solid var(--greyish);
+    outline: 0px;
+}
+
+section#selection div#selection-wrapper select:hover {
+    border: 4px solid var(--bluewish);
+}
+
+section#selection div#selection-wrapper select.selected {
+    border: 4px solid var(--bluewish);
 }
 
 section#selection div#selection-wrapper input {
@@ -205,6 +225,16 @@ section#selection div#selection-wrapper input {
     width: 200px;
     padding: 6px;
     border-radius: var(--radius10);
+    border: 4px solid var(--greyish);
+    outline: 0px;
+}
+
+section#selection div#selection-wrapper input:hover {
+    border: 4px solid var(--bluewish);
+}
+
+section#selection div#selection-wrapper input.selected {
+    border: 4px solid var(--bluewish);
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -231,6 +261,11 @@ section#score p#score-value {
 section#action button {
     font-weight: 500;
     width: 150px;
+}
+
+section#action button#quit-button {
+    color: var(--white);
+    background-color: var(--greyish);
 }
 
 section#action button:hover {
