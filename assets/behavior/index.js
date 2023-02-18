@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function() {
     let resetSelectionButton = this.querySelector("button#reset-selection-button");
     let quitButton = this.querySelector("button#quit-button");
     let sectionMessageElement = this.querySelector("section#message p");
+    let checkmarks = this.querySelectorAll("section#selection div.checkmark");
+    let pipes = this.querySelectorAll("section#selection div.pipe");
 
     let agenciesList = [   
         {
@@ -722,6 +724,20 @@ document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener('submit', event => event.preventDefault(), false);
 
     document.addEventListener('input', event => {
+        if (selectAgencyElement.value) { checkmarks[0].classList.add("selected"); selectAgencyElement.classList.add("selected") } else { checkmarks[0].classList.remove("selected"); selectAgencyElement.classList.remove("selected") }
+        if (selectTeamElement.value) { checkmarks[1].classList.add("selected"); selectTeamElement.classList.add("selected") } else { checkmarks[1].classList.remove("selected"); selectTeamElement.classList.remove("selected") }
+        if (inputBidElement.value) { checkmarks[2].classList.add("selected"); inputBidElement.classList.add("selected") } else { checkmarks[2].classList.remove("selected"); inputBidElement.classList.remove("selected") }
+        if (selectModelElement.value) { checkmarks[3].classList.add("selected"); selectModelElement.classList.add("selected") } else { checkmarks[3].classList.remove("selected"); selectModelElement.classList.remove("selected") }
+        
+        if (checkmarks[0].classList.contains("selected") && checkmarks[1].classList.contains("selected") && checkmarks[2].classList.contains("selected") && checkmarks[3].classList.contains("selected")) {
+            pipes[0].classList.add("selected");
+            pipes[1].classList.add("selected");
+            pipes[2].classList.add("selected");
+        } else {
+            pipes[0].classList.remove("selected");
+            pipes[1].classList.remove("selected");
+            pipes[2].classList.remove("selected");
+        }
 
         if ((selectAgencyElement.value) && (selectTeamElement.value) && (inputBidElement.value != "") && (selectModelElement.value)) {
             let model = eval(selectModelElement.value);
@@ -765,6 +781,19 @@ document.addEventListener("DOMContentLoaded", function() {
         selectModelElement.selectedIndex = 0;
         pScoreElement.innerHTML = "0.0";
 
+        checkmarks[0].classList.remove("selected");
+        checkmarks[1].classList.remove("selected");
+        checkmarks[2].classList.remove("selected");
+        checkmarks[3].classList.remove("selected");
+        
+        pipes[0].classList.remove("selected");
+        pipes[1].classList.remove("selected");
+        pipes[2].classList.remove("selected");
+
+        selectAgencyElement.classList.remove("selected");
+        selectTeamElement.classList.remove("selected");
+        inputBidElement.classList.remove("selected");
+        selectModelElement.classList.remove("selected")
 
     }, false);
 
