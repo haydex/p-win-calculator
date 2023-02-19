@@ -8,6 +8,9 @@
     --greyish: #707071;
     --greyish-dark: rgb(30, 30, 30);
     --bluewish: #009DFF;
+    --border-width-2: 2px;
+    --border-width-4: 4px;
+    --border-1000: 1000px;
     
     /* fonts */
 
@@ -123,8 +126,8 @@ header {
 }
 
 header div#p-win-logo {
-    width: 181px;
-    height: 36px;
+    width: 194px;
+    height: 38px;
     background-image: var(--interface);
     background-position: -240px -50px;
 }
@@ -147,6 +150,10 @@ header div#login div#details p#username {
 header div#login div#username-logo {
     width: 47px;
     height: 47px;
+    border: 0 solid var(--greyish);
+    border-radius: var(--border-1000);
+    box-shadow: inset 0px 0px 0px var(--border-width-2) var(--greyish);
+    box-sizing: border-box;
     background-image: var(--interface);
     background-position: -110px -250px;
 }
@@ -185,7 +192,7 @@ section#selection div#checkmark-wrapper div.checkmark.selected {
 
 section#selection div#checkmark-wrapper div.pipe {
     width: 180px;
-    height: 4px;
+    height: var(--border-width-4);
     background-color: var(--greyish);
 }
 
@@ -210,16 +217,18 @@ section#selection div#selection-wrapper select {
     text-align: center;
     width: 200px;
     padding: 5px;
-    border: 4px solid var(--greyish);
+    border: var(--border-width-2) solid var(--greyish);
     outline: 0px;
 }
 
 section#selection div#selection-wrapper select:hover {
-    border: 4px solid var(--bluewish);
+    border: var(--border-width-2) solid var(--bluewish);
 }
 
 section#selection div#selection-wrapper select.selected {
-    border: 4px solid var(--bluewish);
+    border: var(--border-width-2) solid var(--bluewish);
+    background-color: var(--bluewish);
+    color: var(--white);
 }
 
 section#selection div#selection-wrapper input {
@@ -227,16 +236,18 @@ section#selection div#selection-wrapper input {
     width: 200px;
     padding: 6px;
     border-radius: var(--radius10);
-    border: 4px solid var(--greyish);
+    border: var(--border-width-2) solid var(--greyish);
     outline: 0px;
 }
 
 section#selection div#selection-wrapper input:hover {
-    border: 4px solid var(--bluewish);
+    border: var(--border-width-2) solid var(--bluewish);
 }
 
 section#selection div#selection-wrapper input.selected {
-    border: 4px solid var(--bluewish);
+    border: var(--border-width-2) solid var(--bluewish);
+    background-color: var(--bluewish);
+    color: var(--white);
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -289,10 +300,7 @@ footer {
     }
 
     header div#login div#username-logo {
-        width: 47px;
-        height: 47px;
-        background-image: var(--interface);
-        background-position: -110px -300px;
+        box-shadow: inset 0px 0px 0px var(--border-width-2) var(--white);
     }
 
     section#selection div#selection-wrapper input {
