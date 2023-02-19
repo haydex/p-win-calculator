@@ -8,13 +8,16 @@
     --greyish: #707071;
     --greyish-dark: rgb(30, 30, 30);
     --bluewish: #009DFF;
-    --border-width-2: 2px;
-    --border-width-4: 4px;
-    --border-1000: 1000px;
+    --border-width-regular: 2px;
+    --border-width-thick: 4px;
+    --border-radius-full: 1000px;
     
     /* fonts */
 
-    --size12: 12px;
+    --font-size-small: 12px;
+    --font-size-regular: 16px;
+    --font-size-large: 32px;
+    --font-size-xlarge: 56px;
 
     /* radius */
 
@@ -31,6 +34,7 @@ html {
 
     color: var(--greyish);
     font-family: "Roboto", sans-serif;
+    font-size: var(--font-size-regular);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     box-sizing: border-box; /* https://www.w3schools.com/css/css3_box-sizing.asp   https://www.youtube.com/watch?v=ADDvQlerEx4&list=PLu8EoSxDXHP5CIFvt9-ze3IngcdAc2xKG&index=2 */
@@ -94,6 +98,7 @@ input {
     border-radius: var(--radius10);
     border: 1px solid var(--greyish);
     font-weight: 500;
+    font-size: var(--font-size-regular);
 }
 
 select {
@@ -102,6 +107,7 @@ select {
     border: 1px solid var(--greyish);
     cursor: pointer;
     font-weight: 500;
+    font-size: var(--font-size-regular);
 }
 
 ::-webkit-scrollbar {
@@ -151,8 +157,8 @@ header div#login div#username-logo {
     width: 47px;
     height: 47px;
     border: 0 solid var(--greyish);
-    border-radius: var(--border-1000);
-    box-shadow: inset 0px 0px 0px var(--border-width-2) var(--greyish);
+    border-radius: var(--border-radius-full);
+    box-shadow: inset 0px 0px 0px var(--border-width-regular) var(--greyish);
     box-sizing: border-box;
     background-image: var(--interface);
     background-position: -110px -250px;
@@ -164,7 +170,7 @@ section#message {
 
 section#message p span {
     display: block;
-    font-size: 32px;
+    font-size: var(--font-size-large);
     font-weight: bold;
 }
 
@@ -191,8 +197,8 @@ section#selection div#checkmark-wrapper div.checkmark.selected {
 }
 
 section#selection div#checkmark-wrapper div.pipe {
-    width: 180px;
-    height: var(--border-width-4);
+    width: 185px;
+    height: var(--border-width-thick);
     background-color: var(--greyish);
 }
 
@@ -217,16 +223,16 @@ section#selection div#selection-wrapper select {
     text-align: center;
     width: 200px;
     padding: 5px;
-    border: var(--border-width-2) solid var(--greyish);
+    border: var(--border-width-regular) solid var(--greyish);
     outline: 0px;
 }
 
 section#selection div#selection-wrapper select:hover {
-    border: var(--border-width-2) solid var(--bluewish);
+    border: var(--border-width-regular) solid var(--bluewish);
 }
 
 section#selection div#selection-wrapper select.selected {
-    border: var(--border-width-2) solid var(--bluewish);
+    border: var(--border-width-regular) solid var(--bluewish);
     background-color: var(--bluewish);
     color: var(--white);
 }
@@ -236,16 +242,16 @@ section#selection div#selection-wrapper input {
     width: 200px;
     padding: 6px;
     border-radius: var(--radius10);
-    border: var(--border-width-2) solid var(--greyish);
+    border: var(--border-width-regular) solid var(--greyish);
     outline: 0px;
 }
 
 section#selection div#selection-wrapper input:hover {
-    border: var(--border-width-2) solid var(--bluewish);
+    border: var(--border-width-regular) solid var(--bluewish);
 }
 
 section#selection div#selection-wrapper input.selected {
-    border: var(--border-width-2) solid var(--bluewish);
+    border: var(--border-width-regular) solid var(--bluewish);
     background-color: var(--bluewish);
     color: var(--white);
 }
@@ -268,7 +274,7 @@ section#score p#p-win-label {
 
 section#score p#score-value {
     font-weight: 600;
-    font-size: 56px;
+    font-size: var(--font-size-xlarge);
 }
 
 section#action button {
@@ -300,7 +306,7 @@ footer {
     }
 
     header div#login div#username-logo {
-        box-shadow: inset 0px 0px 0px var(--border-width-2) var(--white);
+        box-shadow: inset 0px 0px 0px var(--border-width-regular) var(--white);
     }
 
     section#selection div#selection-wrapper input {
