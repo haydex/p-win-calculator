@@ -126,7 +126,7 @@ select {
 }
 
 header {
-    height: 47px;
+    height: 38px;
     display: flex;
     grid-area: header;
     justify-content:space-between;
@@ -155,8 +155,8 @@ header div#login div#details p#username {
 }
 
 header div#login div#username-logo {
-    width: 47px;
-    height: 47px;
+    width: 38px;
+    height: 38px;
     border: 0 solid var(--greyish);
     border-radius: var(--border-radius-full);
     box-shadow: inset 0px 0px 0px var(--border-width-regular) var(--greyish);
